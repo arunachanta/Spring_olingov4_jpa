@@ -1,4 +1,4 @@
-package com.walmart.rebates.application;
+package com.walmart.rebates.processor;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -18,6 +18,8 @@ import org.springframework.stereotype.Component;
 
 import com.walmart.rebates.core.foundation.GenericEntityCollectionProcessor;
 import com.walmart.rebates.core.providers.ProductEdmProvider;
+import com.walmart.rebates.dao.Product;
+import com.walmart.rebates.repository.ProductRepository;
 
 /**
  * This class is invoked by the Olingo framework when the the OData service is invoked order to display a list/collection of data (entities).
@@ -27,6 +29,7 @@ import com.walmart.rebates.core.providers.ProductEdmProvider;
  */
 
 @Component
+@ComponentScan("com.walmart.rebates.repository")
 public class ProductEntityProcessor extends GenericEntityCollectionProcessor {
 
 	

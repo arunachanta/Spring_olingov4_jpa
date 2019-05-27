@@ -1,4 +1,4 @@
-package com.walmart.rebates.application;
+package com.walmart.rebates.dao;
 
 import javax.persistence.*;
 

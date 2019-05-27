@@ -12,9 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-@EnableAutoConfiguration
 @Configuration
 @ComponentScan("com.walmart.rebates")
+@EntityScan("com.walmart.rebates.dao")
+@EnableJpaRepositories("com.walmart.rebates.repository")
 public class RebatesApplication {
 
 	public static void main(String[] args) {

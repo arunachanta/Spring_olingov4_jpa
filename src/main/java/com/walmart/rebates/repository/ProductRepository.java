@@ -1,7 +1,10 @@
-package com.walmart.rebates.application;
+package com.walmart.rebates.repository;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+
+import com.walmart.rebates.dao.Product;
 
 import java.util.List;
 
