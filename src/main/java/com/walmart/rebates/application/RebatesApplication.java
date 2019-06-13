@@ -1,5 +1,6 @@
 package com.walmart.rebates.application;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,7 +9,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.walmart.rebates.dao.Product;
+import com.walmart.rebates.repository.ProductRepository;
 
 @SpringBootApplication
 @RestController
@@ -17,6 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
 @EntityScan("com.walmart.rebates.dao")
 @EnableJpaRepositories("com.walmart.rebates.repository")
 public class RebatesApplication {
+	
+	
 
 	public static void main(String[] args) {
 		SpringApplication.run(RebatesApplication.class, args);

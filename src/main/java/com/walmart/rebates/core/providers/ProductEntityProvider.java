@@ -27,15 +27,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.walmart.rebates.core.foundation.EntityProvider;
-import com.walmart.rebates.dao.Category;
-import com.walmart.rebates.repository.CategoryRepository;
-
+import com.walmart.rebates.dao.Product;
+import com.walmart.rebates.repository.ProductRepository;
 
 @Component
-public class CategoryEntityProvider implements EntityProvider {
+public class ProductEntityProvider implements EntityProvider {
 
 	@Autowired
-	CategoryRepository repoCat;
+	ProductRepository repoProd;
 	
 	// Service Namespace
 	public static final String NAMESPACE = "com.example.model";
@@ -46,12 +45,12 @@ public class CategoryEntityProvider implements EntityProvider {
 			NAMESPACE, CONTAINER_NAME);
 
 	// Entity Types Names
-	public static final String ET_CATEGORY_NAME = "Category";
+	public static final String ET_CATEGORY_NAME = "Product";
 	public static final FullQualifiedName ET_CATEGORY_FQN = new FullQualifiedName(
 			NAMESPACE, ET_CATEGORY_NAME);
 
 	// Entity Set Names
-	public static final String ES_CATEGORIES_NAME = "Categories";
+	public static final String ES_CATEGORIES_NAME = "Products";
 
 	@Override
 	public CsdlEntityType getEntityType() {
@@ -110,11 +109,11 @@ public class CategoryEntityProvider implements EntityProvider {
         // check for which EdmEntitySet the data is requested
             List<Entity> productList = productsCollection.getEntities();
 
-            Iterable<Category> categories = repoCat.findAll();
-            for (Category category : categories) {
-                Entity entity = new Entity().addProperty(new Property(null, "ID", ValueType.PRIMITIVE, category.getId()))
-                        .addProperty(new Property(null, "Name", ValueType.PRIMITIVE, category.getName()));
-                entity.setId(createId("Category",category.getId()));
+            Iterable<Product> products = repoProd.findAll();
+            for (Product product : products) {
+                Entity entity = new Entity().addProperty(new Property(null, "ID", ValueType.PRIMITIVE, product.getId()))
+                        .addProperty(new Property(null, "Name", ValueType.PRIMITIVE, product.getName()));
+                entity.setId(createId("Products",product.getId()));
                 productList.add(entity);
             }
             return productsCollection;
