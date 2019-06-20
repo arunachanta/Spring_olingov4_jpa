@@ -16,12 +16,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.walmart.rebates.dao.Product;
 import com.walmart.rebates.repository.ProductRepository;
 
-@SpringBootApplication
 @RestController
-@Configuration
+@SpringBootApplication
 @ComponentScan("com.walmart.rebates")
-@EntityScan("com.walmart.rebates.dao")
-@EnableJpaRepositories("com.walmart.rebates.repository")
+@EntityScan("com.walmart.rebates.entities")
 public class RebatesApplication {
 	
 	

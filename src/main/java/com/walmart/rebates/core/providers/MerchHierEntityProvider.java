@@ -70,12 +70,10 @@ public class MerchHierEntityProvider implements EntityProvider {
 
 		CsdlEntityType entityType = new CsdlEntityType();
 		entityType.setName(ET_MERCHHIER);
-		
-		CsdlNavigationProperty navpop = new CsdlNavigationProperty()
-            .setName("MerchHier")
-            .setType(ET_MERCHHIER_FQN);
-List<CsdlNavigationProperty> navlist = new ArrayList<CsdlNavigationProperty>();
-	navlist.add(navpop); 
+
+		CsdlNavigationProperty navpop = new CsdlNavigationProperty().setName("MerchHier").setType(ET_MERCHHIER_FQN);
+		List<CsdlNavigationProperty> navlist = new ArrayList<CsdlNavigationProperty>();
+		navlist.add(navpop);
 		entityType.setProperties(setEntityProperties("com.walmart.rebates.dao.MerchHier"));
 		entityType.setKey(setkeys("com.walmart.rebates.dao.MerchHier"));
 		entityType.setNavigationProperties(navlist);
