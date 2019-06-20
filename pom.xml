@@ -23,7 +23,6 @@
 		<javax.version>2.5</javax.version>
 		<odata.version>4.2.0</odata.version>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
