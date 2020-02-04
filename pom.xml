@@ -21,7 +21,7 @@
 		<azure.version>2.1.2</azure.version>
 		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
 		<javax.version>2.5</javax.version>
-		<odata.version>4.2.0</odata.version>
+		<odata.version>4.7.1</odata.version>
 	</properties>
 	<dependencies>
 		<dependency>
